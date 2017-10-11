@@ -12,6 +12,14 @@ module.exports = {
         filename: 'bundle.js',
         publicPath: '/'
     },
+    devServer: {
+        port: 8080,
+        historyApiFallback: true,
+        contentBase: __dirname + '/views',
+        proxy: {
+            "/db": "http://localhost:3000"
+        }
+      },
     module: {
         loaders: [
            {
